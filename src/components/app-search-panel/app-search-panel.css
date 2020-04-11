@@ -1,0 +1,36 @@
+.app__search {
+    border: 2px solid black;
+    padding: 8px 70px;
+    font-size: 16px;
+    margin: 0 40px 0 32px;
+    box-sizing: border-box;
+    background-color: white;
+    background-image: url(./search.png);
+    background-size: 25px;
+    background-position: 5px 5px;
+    background-repeat: no-repeat;
+    color: black;
+    font-weight: bold;
+}
+
+@media(max-width: 1200px){
+    .app__search{
+        margin: 0 115px 20px 0px;
+        padding: 8px 65px;
+        
+    }
+}
+
+@media(max-width: 800px){
+    .app__search{
+        margin: 0 0px 20px 0px;
+        padding: 8px 50px;
+         
+    }
+}
+
+@media(max-width: 431px){
+    .app__search{
+         width: 300px;
+    }
+}

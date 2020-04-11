@@ -1,0 +1,23 @@
+.app__sort-status{
+    border: 2px solid black;
+    font-size: 16px;
+    padding: 7px 160px 7px 5px;
+    margin: 0 35px 0 0;
+}
+
+@media(max-width:1200px){
+    .app__sort-status{
+        margin: 0 0px 20px 0px;
+        padding: 7px 260px 7px 5px;
+    }
+}
+
+
+@media(max-width: 431px){
+    .app__sort-status{
+         
+         
+         width: 300px;
+         
+    }
+}

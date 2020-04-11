@@ -1,0 +1,26 @@
+.app__sort-priority{
+    border: 2px solid black;
+    font-size: 16px;
+    padding: 7px 150px 7px 5px;
+    margin: 0 40px 0 0;
+}
+
+@media(max-width: 1200px){
+    .app__sort-priority{
+        margin: 0px 115px 0px 0px;
+        padding: 7px 245px 7px 5px;
+    }
+}
+
+@media(max-width: 800px){
+    .app__sort-priority{
+        margin: 0px 0px 20px 0px;
+        padding: 7px 230px 7px 5px;
+    }
+}
+
+@media(max-width: 431px){
+    .app__sort-priority{
+         width: 300px;
+    }
+}
