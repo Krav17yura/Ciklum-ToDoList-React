@@ -130,8 +130,8 @@ export default class App extends Component {
             const newItem = { ...oldItem, done: !oldItem.done };
             const newArr = [
                 ...todoData.slice(0, index),
-                newItem,
-                ...todoData.slice(index + 1)
+                ...todoData.slice(index + 1),
+                newItem
             ];
 
 
@@ -204,44 +204,46 @@ export default class App extends Component {
         const visibleItem = this.onfilterPriority(this.onfilterStatus((this.search(todoData, search)), filterStatus), filterPriority)
 
         return (
-            <div className='wrapper'>
-                <header className='app__header'>
-                    <AppHeader />
-                </header>
-                <section className="container  ">
-                    <div className="app__row">
-                        <div className="first__column">
-                            <AppSearchPanel
-                                onSearchChange={this.onSearchChange} />
-                            <AppSortStatus
-                                onStatusFilterChange={this.onStatusFilterChange}
-                            />
+            <div className="main">
+                <div className='wrapper'>
+                    <header className='app__header'>
+                        <AppHeader />
+                    </header>
+                    <section className="container  ">
+                        <div className="app__row">
+                            <div className="first__column">
+                                <AppSearchPanel
+                                    onSearchChange={this.onSearchChange} />
+                                <AppSortStatus
+                                    onStatusFilterChange={this.onStatusFilterChange}
+                                />
+                            </div>
+                            <div className="second__column">
+                                <AppSortPriority
+                                    onFilterPriorityChange={this.onFilterPriorityChange} />
+                                <AppAddItemButton
+                                    onPoupapCraateItemToggle={this.onPoupapCraateItemToggle}
+                                    createPoupap={this.state.createPoupap} />
+                            </div>
                         </div>
-                        <div className="second__column">
-                            <AppSortPriority
-                                onFilterPriorityChange={this.onFilterPriorityChange} />
-                            <AppAddItemButton
-                                onPoupapCraateItemToggle={this.onPoupapCraateItemToggle}
-                                createPoupap={this.state.createPoupap} />
-                        </div>
-                    </div>
-                    <AppItemList
-                        todos={visibleItem}
-                        onDoneToggle={this.onDoneToggle}
-                        removeItem={this.removeItem}
-                        onPoupapEditItemToggle={this.onPoupapEditItemToggle}
-                        editPoupap={this.state.editPoupap}
-                        editItem={this.editItem} />
-                    <AppPoupapAddItemPanel
-                        onPoupapCraateItemToggle={this.onPoupapCraateItemToggle}
-                        createPoupap={this.state.createPoupap}
-                        addItem={this.addItem} />
-                    <AppPoupapEditItemPanel
-                        onPoupapEditItemToggle={this.onPoupapEditItemToggle}
-                        editPoupap={this.state.editPoupap}
-                        editElem={this.state.editElem}
-                        editItemFinish={this.editItemFinish} />
-                </section>
+                        <AppItemList
+                            todos={visibleItem}
+                            onDoneToggle={this.onDoneToggle}
+                            removeItem={this.removeItem}
+                            onPoupapEditItemToggle={this.onPoupapEditItemToggle}
+                            editPoupap={this.state.editPoupap}
+                            editItem={this.editItem} />
+                        <AppPoupapAddItemPanel
+                            onPoupapCraateItemToggle={this.onPoupapCraateItemToggle}
+                            createPoupap={this.state.createPoupap}
+                            addItem={this.addItem} />
+                        <AppPoupapEditItemPanel
+                            onPoupapEditItemToggle={this.onPoupapEditItemToggle}
+                            editPoupap={this.state.editPoupap}
+                            editElem={this.state.editElem}
+                            editItemFinish={this.editItemFinish} />
+                    </section>
+                </div>
                 <AppFooter />
             </div>
 
