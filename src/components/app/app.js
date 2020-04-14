@@ -48,7 +48,7 @@ export default class App extends Component {
             const newItem = this.createTodoItem(title, description, priority);
 
             this.setState(({ todoData }) => {
-                const newArr = [...todoData, newItem];
+                const newArr = [newItem, ...todoData];
 
                 return {
                     todoData: newArr
@@ -127,7 +127,7 @@ export default class App extends Component {
         this.setState(({ todoData }) => {
             const index = todoData.findIndex((el) => el.id === id);
             const oldItem = todoData[index];
-            const newItem = { ...oldItem, done: !oldItem.done };
+            const newItem = { ...oldItem, done: true };
             const newArr = [
                 ...todoData.slice(0, index),
                 ...todoData.slice(index + 1),

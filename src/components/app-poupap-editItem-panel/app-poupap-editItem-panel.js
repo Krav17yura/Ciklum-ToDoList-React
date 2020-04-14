@@ -3,11 +3,14 @@ import './app-poupap-editItem-panel.css'
 
 export default class AppPoupapEditItemPanel extends Component {
 
+     
+ 
     state = {
         label: "",
         description: "",
         priority: ""
     }
+   
 
     onLabelChange = (e) => {
         this.setState({
@@ -32,6 +35,7 @@ export default class AppPoupapEditItemPanel extends Component {
         e.target.reset();
     }
 
+   
      
 
     render() {
